@@ -1,5 +1,7 @@
 package com.lksnext.parkingplantilla.viewmodel;
 
+import android.util.Log;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -7,32 +9,43 @@ import androidx.lifecycle.ViewModel;
 import com.lksnext.parkingplantilla.data.DataRepository;
 import com.lksnext.parkingplantilla.domain.Callback;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+
 public class LoginViewModel extends ViewModel {
 
     // Aquí puedes declarar los LiveData y métodos necesarios para la vista de inicio de sesión
     MutableLiveData<Boolean> logged = new MutableLiveData<>(null);
+    private Executor executor = Executors.newSingleThreadExecutor();
 
     public LiveData<Boolean> isLogged(){
         return logged;
     }
 
-    public void loginUser(String email, String password) {
-        //Clase para comprobar si los datos de inicio de sesión son correctos o no
-        DataRepository.getInstance().login(email, password, new Callback() {
-            //En caso de que el login sea correcto, que se hace
-            @Override
-            public void onSuccess() {
-                //TODO
-                logged.setValue(Boolean.TRUE);
-            }
+    // Initialize Firebase Auth
+    FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
-            //En caso de que el login sea incorrecto, que se hace
-            @Override
-            public void onFailure() {
-                //TODO
-                logged.setValue(Boolean.FALSE);
-            }
-        });
+    public void loginUser(String email, String password) {
+
+        // Sign in an existing user
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(executor, task -> {
+                    if (task.isSuccessful()) {
+                        // Sign in success, update UI with the signed-in user's information
+                        FirebaseUser user = mAuth.getCurrentUser();
+                        logged.postValue(Boolean.TRUE);
+                        Log.i("signIn","OK");
+
+                    } else {
+                        // If sign in fails, display a message to the user.
+                        logged.postValue(Boolean.FALSE);
+                        Log.e("signIn","NOK");
+                    }
+                });
+
     }
 }
 
