@@ -11,4 +11,12 @@
         android:label="@string/fragment_main"
         tools:layout="@layout/fragment_main">
     </fragment>
+
+    <fragment
+        android:id="@+id/myVehiclesFragment"
+        android:name="com.lksnext.parkingNBeltran.view.fragment.MyVehiclesFragment"
+        android:label="Mis vehículos"
+        tools:layout="@layout/fragment_my_vehicles">
+    </fragment>
+
 </navigation>
