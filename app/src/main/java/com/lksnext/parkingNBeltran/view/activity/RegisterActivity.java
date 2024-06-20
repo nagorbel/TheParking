@@ -1,12 +1,12 @@
-package com.lksnext.parkingplantilla.view.activity;
+package com.lksnext.parkingNBeltran.view.activity;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.lksnext.parkingplantilla.databinding.ActivityRegisterBinding;
-import com.lksnext.parkingplantilla.viewmodel.RegisterViewModel;
+import com.lksnext.parkingNBeltran.databinding.ActivityRegisterBinding;
+import com.lksnext.parkingNBeltran.viewmodel.RegisterViewModel;
 
 public class RegisterActivity extends AppCompatActivity {
 

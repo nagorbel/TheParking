@@ -1,6 +1,6 @@
-package com.lksnext.parkingplantilla.data;
+package com.lksnext.parkingNBeltran.data;
 
-import com.lksnext.parkingplantilla.domain.Callback;
+import com.lksnext.parkingNBeltran.domain.Callback;
 
 public class DataRepository {
 

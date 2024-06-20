@@ -1,4 +1,4 @@
-package com.lksnext.parkingplantilla.view.activity;
+package com.lksnext.parkingNBeltran.view.activity;
 
 import android.os.Bundle;
 
@@ -9,8 +9,8 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.lksnext.parkingplantilla.R;
-import com.lksnext.parkingplantilla.databinding.ActivityMainBinding;
+import com.lksnext.parkingNBeltran.R;
+import com.lksnext.parkingNBeltran.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -1,13 +1,10 @@
-package com.lksnext.parkingplantilla.viewmodel;
+package com.lksnext.parkingNBeltran.viewmodel;
 
 import android.util.Log;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
-
-import com.lksnext.parkingplantilla.data.DataRepository;
-import com.lksnext.parkingplantilla.domain.Callback;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -45,7 +42,6 @@ public class LoginViewModel extends ViewModel {
                         Log.e("signIn","NOK");
                     }
                 });
-
     }
 }
 

@@ -8,7 +8,7 @@ android {
     buildToolsVersion '34.0.0'
 
     defaultConfig {
-        applicationId "com.lksnext.parkingplantilla"
+        applicationId "com.lksnext.parkingNBeltran"
         minSdkVersion 24
         targetSdkVersion 34
         versionCode 1
