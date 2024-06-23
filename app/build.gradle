@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'androidx.navigation.safeargs'
 apply plugin: 'com.google.gms.google-services'
-
+//apply plugin: 'org.sonarqube'
 
 android {
     compileSdk 34
@@ -35,6 +35,14 @@ android {
     }
 }
 
+
+/*sonarqube {
+    property "sonar.projectKey", "nagorbel_TheParking"
+    property "sonar.organization", "nagorbel"
+    property "sonar.host.url", "https://sonarcloud.io"
+    property "sonar.login", "${System.getenv('SONAR_TOKEN')}"  // Utiliza el token de SonarQube como variable de entorno
+
+}*/
 
 
 dependencies {
