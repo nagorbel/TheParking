@@ -5,9 +5,13 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.lksnext.parkingNBeltran.domain.Callback;
 
 import androidx.annotation.NonNull;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.lksnext.parkingNBeltran.domain.Reserva;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -53,6 +57,27 @@ public class DataRepository {
 
     public FirebaseUser getCurrentUser() {
         return mAuth.getCurrentUser();
+    }
+
+    public LiveData<Boolean> crearReserva(Reserva reserva) {
+        MutableLiveData<Boolean> successLiveData = new MutableLiveData<>();
+
+        if ((reserva.getHoraFin().getHoraFin()) - (reserva.getHoraInicio().getHoraInicio()) > 9 * 60 * 60 * 1000) {
+            successLiveData.setValue(false); // Más de 9 horas
+            return successLiveData;
+        }
+
+        if (reserva.getHoraInicio().getHoraInicio() > System.currentTimeMillis() + 7 * 24 * 60 * 60 * 1000) {
+            successLiveData.setValue(false); // Más de 7 días
+            return successLiveData;
+        }
+
+        firestore.collection("reservas")
+                .add(reserva)
+                .addOnSuccessListener(documentReference -> successLiveData.setValue(true))
+                .addOnFailureListener(e -> successLiveData.setValue(false));
+
+        return successLiveData;
     }
 
 }

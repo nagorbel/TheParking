@@ -14,6 +14,9 @@ public class Plaza {
         this.tipo = tipo;
     }
 
+    public Plaza(String string, String tipoPlaza) {
+    }
+
     public String getTipo() {
         return tipo;
     }

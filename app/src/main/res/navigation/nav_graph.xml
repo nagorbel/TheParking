@@ -9,7 +9,7 @@
         android:id="@+id/mainFragment"
         android:name="com.lksnext.parkingNBeltran.view.fragment.MainFragment"
         android:label="@string/fragment_main"
-        tools:layout="@layout/fragment_main">
+        tools:layout="@layout/fragment_reserva">
     </fragment>
 
     <fragment
