@@ -7,9 +7,9 @@
          <item name="colorOnPrimary">@color/eerie_black</item>
          <item name="android:colorBackground">#ffffff</item>-->
          <!-- Secondary brand color. -->
-        <!--<item name="colorSecondary">@color/steel_blue</item>
-        <item name="colorSecondaryVariant">@color/ucla_blue</item>
-        <item name="colorOnSecondary">@color/steel_blue</item>-->
+        <item name="colorSecondary">@color/light_gray</item>
+        <item name="colorSecondaryVariant">@color/light_gray</item>
+        <item name="colorOnSecondary">@color/light_gray</item>
         <!-- Status bar color. -->
         <!--<item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>-->
         <!-- Customize your theme here. -->
